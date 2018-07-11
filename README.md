@@ -1,5 +1,5 @@
 # TV_Show_Giphy:
- _ An app that calls the Giphy API and render's giphies that pertain to the tv show. The giphies are activated and de-activated on click. 
+ - An app that calls the Giphy API and render's giphies that pertain to the tv show. The giphies are activated and de-activated on click. 
 
 ## Click here to see app:
 [Tv Show Giphy](https://smolvera.github.io/TV_Show_Giphy/)
