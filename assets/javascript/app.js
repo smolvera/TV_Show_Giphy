@@ -8,7 +8,7 @@ $(function(){
 // array of search topics
 var searchArray = ["How to Get Away with Murder", "Game of Thrones", "The Walking Dead"];
 
-// funtion to add buttons to page after submitting input in the search area
+// function to add buttons to page after submitting input in the search area
 function populateButtons(searchArray, classToAdd, areaToAddTo){
     $(areaToAddTo).empty();
     for(var i = 0; i < searchArray.length; i++){
@@ -19,7 +19,7 @@ function populateButtons(searchArray, classToAdd, areaToAddTo){
         $(areaToAddTo).append(a);
     }
 }
-
+// when the submit button is clicked, an ajax call is made to the giphy API
 $(document).on('click', '.searchButton', function(){
     $('#searches').empty();
     var type = $(this).data('type');
@@ -29,7 +29,7 @@ $(document).on('click', '.searchButton', function(){
         url: queryURL,
         method: 'GET',
     })
-
+// the AJAX response is logged with the rating, still and animated image tags, and the image and rating is uploaded on the html page
     .done(function(response){
         console.log(response.data);
         for(var i = 0; i < response.data.length; i++){
@@ -52,7 +52,7 @@ $(document).on('click', '.searchButton', function(){
         
     })
 })
-
+// This function lets the image click back and forth between still and animated 
 $(document).on('click', '.searchImage', function(){
     var state = $(this).attr('data-state');
     if(state == 'still'){
@@ -63,7 +63,7 @@ $(document).on('click', '.searchImage', function(){
         $(this).attr('data-state', 'still');
     }
 })
-
+// This function popluates a button for the newly searched tv show
 $('#addSearch').on('click', function(){
     var newSearch = $('input').eq(0).val();
     searchArray.push(newSearch);
